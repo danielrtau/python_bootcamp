@@ -17,7 +17,10 @@ if __name__ == '__main__':
     ingredients += ["avocado", "arugula", "tomatoes"]
     r3 = new_recipy("Salad", ingredients, "lunch", 15)
     for i in r1['ingredients']:
-        print(i)
+        if i == r1['ingredients'][-1]:
+            print(i)
+        else:
+            print(i, end=", ")
     print(r1['ingredients'])
     print(r2)
     print(r3)
