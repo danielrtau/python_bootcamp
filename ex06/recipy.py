@@ -16,11 +16,23 @@ if __name__ == '__main__':
     ingredients = []
     ingredients += ["avocado", "arugula", "tomatoes"]
     r3 = new_recipy("Salad", ingredients, "lunch", 15)
-    for i in r1['ingredients']:
-        if i == r1['ingredients'][-1]:
-            print(i)
-        else:
-            print(i, end=", ")
-    print(r1['ingredients'])
-    print(r2)
-    print(r3)
+    recetas = []
+    recetas.append(r1)
+    recetas.append(r2)
+    recetas.append(r3)
+    a1 = "pizza"
+    a2 = ["masa", "jamon"]
+    a3 = "dinner"
+    a4 = 25
+    nr = new_recipy(a1, a2, a3, a4)
+    recetas.append(nr)
+    nr = new_recipy("tarta", a2, a3, a4)
+    recetas.append(nr)
+    recetas.pop(0)
+    for i in recetas:
+            print(i['name'])
+            for j in i['ingredients']:
+                if j != i['ingredients'][-1]:
+                    print(j, end=", ")
+                else:
+                    print(j)
