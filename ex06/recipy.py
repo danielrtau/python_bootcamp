@@ -41,7 +41,6 @@ def intro():
         print(msg)
         intro()
 
-
 def print_cookbook():
     for i in recetas:
         print("\nRecipe for: " + i['name'])
@@ -84,7 +83,19 @@ def print_recipe():
         print(str(n1) + ". " + i['name'])
         n1 += 1
     prnt = int(input("Select recipe to print: "))
-    print(recetas[prnt - 1])
+    #print(recetas[prnt - 1])
+    i = recetas[prnt - 1]
+    print("\nRecipe for: " + i['name'])
+    print("\tIngredients list:", end=" ")
+    for j in i['ingredients']:
+        if j != i['ingredients']:
+            print(j, end=", ")
+        else:
+            print(j)
+    print("\tTo be eaten for: " + i['meal'])
+    print("\tTakes " + str(i['prep_time']) + " minutes of cooking")
+    input("\nPress Enter to continue...")
+    os.system('clear')
 
 if __name__ == '__main__':
     os.system('clear')
